@@ -30,7 +30,7 @@ const Hero = () => {
           
           <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full p-[3px] bg-gradient-to-b from-goldMetallic via-silverChrome to-cyberTeal shadow-gold-glow">
             <div className="w-full h-full rounded-full bg-pureBlack overflow-hidden border-4 border-pureBlack">
-              {/* ✅ FIXED: Dynamic Image Path */}
+              {/* ✅ UPDATED: Clean lowercase path */}
               <img 
                 src={`${publicPath}/profile.jpg`} 
                 alt="Ashutosh Kumar" 
@@ -89,9 +89,9 @@ const Hero = () => {
             View Projects
           </a>
           
-          {/* ✅ FIXED: Dynamic Resume Path */}
+          {/* ✅ UPDATED: Standardized lowercase resume path */}
           <a 
-            href={`${publicPath}/Ashutosh_kumar_resume.pdf`} 
+            href={`${publicPath}/resume.pdf`} 
             download="Ashutosh_Kumar_Resume.pdf"
             className="px-10 py-5 border-2 border-silverChrome/30 text-white font-black text-[10px] tracking-widest uppercase rounded-sm hover:bg-white/5 hover:border-white transition-all shadow-lg"
           >
@@ -102,7 +102,7 @@ const Hero = () => {
             href="https://www.linkedin.com/in/ashutosh-kumar-122327245/" 
             target="_blank" 
             rel="noreferrer" 
-            className="px-10 py-5 bg-cyberTeal/10 border border-cyberTeal/30 text-cyberTeal font-black text-[10px] tracking-widest uppercase rounded-sm hover:bg-cyberTeal hover:text-black transition-all"
+            className="px-10 py-5 bg-cyberTeal/10 border border-cyberTeal/30 text-cyberTeal font-black text-[10px] tracking-widest uppercase rounded-sm hover:bg-cyberTeal hover:text-black transition-all shadow-cyber-glow"
           >
             LinkedIn
           </a>
