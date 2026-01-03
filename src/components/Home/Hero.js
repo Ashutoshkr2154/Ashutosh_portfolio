@@ -2,16 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
+  // Access the public URL prefix for GitHub Pages compatibility
+  const publicPath = process.env.PUBLIC_URL;
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-pureBlack overflow-hidden pt-20">
       
       {/* 💎 LUXURY BACKGROUND ARCHITECTURE */}
       <div className="absolute inset-0 z-0">
-        {/* Dynamic Glowing Orbs */}
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-goldMetallic/5 blur-[120px] rounded-full animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyberTeal/5 blur-[100px] rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
         
-        {/* Futuristic Luminous Grid Streaks */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-goldMetallic/20 to-transparent"></div>
         <div className="absolute top-1/2 left-0 -translate-y-1/2 h-[1px] w-full bg-gradient-to-r from-transparent via-emeraldNeon/10 to-transparent"></div>
       </div>
@@ -25,14 +26,13 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative mb-12 group"
         >
-          {/* Outer Multi-Tone Glow */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-goldMetallic via-cyberTeal to-emeraldNeon opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-700"></div>
           
-          {/* Metallic Frame with Image */}
           <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full p-[3px] bg-gradient-to-b from-goldMetallic via-silverChrome to-cyberTeal shadow-gold-glow">
             <div className="w-full h-full rounded-full bg-pureBlack overflow-hidden border-4 border-pureBlack">
+              {/* ✅ FIXED: Dynamic Image Path */}
               <img 
-                src="/profile.jpg" 
+                src={`${publicPath}/profile.jpg`} 
                 alt="Ashutosh Kumar" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
                 onError={(e) => { e.target.src = "https://ui-avatars.com/api/?name=Ashutosh+Kumar&background=000&color=FFD700&size=512"; }}
@@ -40,7 +40,6 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Floating Status Orbs */}
           <div className="absolute -top-2 -right-2 w-6 h-6 bg-emeraldNeon rounded-full shadow-emerald-glow animate-bounce"></div>
           <div className="absolute -bottom-4 -left-4 w-4 h-4 bg-cyberTeal rounded-full shadow-cyber-glow animate-pulse"></div>
         </motion.div>
@@ -90,9 +89,9 @@ const Hero = () => {
             View Projects
           </a>
           
-          {/* SECURE DOWNLOAD LINK */}
+          {/* ✅ FIXED: Dynamic Resume Path */}
           <a 
-            href="/Ashutosh_kumar_resume.pdf" 
+            href={`${publicPath}/Ashutosh_kumar_resume.pdf`} 
             download="Ashutosh_Kumar_Resume.pdf"
             className="px-10 py-5 border-2 border-silverChrome/30 text-white font-black text-[10px] tracking-widest uppercase rounded-sm hover:bg-white/5 hover:border-white transition-all shadow-lg"
           >
@@ -110,7 +109,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* LUXURY SCROLL INDICATOR */}
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
