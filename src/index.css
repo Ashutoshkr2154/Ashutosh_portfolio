@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 💎 LUXURY ROOT VARIABLES */
+:root {
+  --gold-metallic: linear-gradient(135deg, #FFD700 0%, #E6B400 50%, #B8860B 100%);
+  --silver-chrome: linear-gradient(135deg, #C0C0C0 0%, #E5E7EB 50%, #9CA3AF 100%);
+  --emerald-neon: #00FFC6;
+  --cyber-teal: #00FFEA;
+  --pure-black: #000000;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-pureBlack text-white antialiased;
+    font-family: 'Inter', sans-serif;
+    
+    /* Luxury Selection State */
+    ::selection {
+      @apply bg-goldMetallic/30 text-white;
+    }
+  }
+}
+
+@layer components {
+  /* 🛡️ METALLIC CARD ARCHITECTURE */
+  /* Used for Project and Experience blocks */
+  .metallic-card {
+    @apply relative bg-neutral-900/40 backdrop-blur-3xl border border-white/10 
+           hover:border-goldMetallic/40 transition-all duration-500 overflow-hidden rounded-sm;
+  }
+
+  /* ✨ SHINE EFFECT UTILITY */
+  /* Adds a moving light streak on hover, mimicking polished metal */
+  .shine-effect {
+    @apply relative overflow-hidden;
+  }
+  
+  .shine-effect::after {
+    content: '';
+    @apply absolute top-0 -left-[100%] w-full h-full transition-all duration-1000 ease-in-out;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transform: skewX(-25deg);
+  }
+
+  .shine-effect:hover::after {
+    @apply left-[100%];
+  }
+
+  /* 🏆 PREMIUM GLOW SHADOWS */
+  .shadow-gold-glow {
+    box-shadow: 0 0 30px -10px rgba(255, 215, 0, 0.3);
+  }
+
+  .shadow-emerald-glow {
+    box-shadow: 0 0 30px -10px rgba(0, 255, 198, 0.4);
+  }
+
+  .shadow-cyber-glow {
+    box-shadow: 0 0 30px -10px rgba(0, 255, 234, 0.4);
+  }
+
+  /* 🖋️ TYPOGRAPHY GRADIENTS */
+  .text-gold {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-goldMetallic via-goldDeep to-goldMetallic;
+  }
+
+  .bg-gold-gradient {
+    background: var(--gold-metallic);
+  }
+}
+
+/* 🧪 SYSTEM POLISH: LUXURY SCROLLBAR */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-pureBlack;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FFD700, #B8860B);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD700;
+}
